@@ -34,7 +34,7 @@ angular.module("myApp")
       templateNamespace: 'html',
       restrict:'A', //'AECM'
       replace:false,
-      scope:false,//{ message:'@'}, //{ message:'='}, //{ message:'&'},
+      scope:false,//true(shared until change), { message:'@'}, //{ message:'='}, //{ message:'&'},//http://www.undefinednull.com/2014/02/11/mastering-the-scope-of-a-directive-in-angularjs/
       //require:['^parentDirectiveName', '?optionalDirectiveName', '?^optionalParent'],
       controller:function ($scope, $element, $attrs, $transclude){
         $scope.message = "inner ctrl";
