@@ -1,0 +1,47 @@
+<!-- index.html --> 
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://jspm.io/system.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.26/angular2.dev.js"></script>
+  </head>
+
+  <body>
+    <my-component></my-component>
+    <script>
+      System.import('main');
+    </script>
+  </body>
+
+</html>
+<!-- main.es6.js --> 
+import {bootstrap} from 'angular2/angular2';
+import {MyComponent} from 'mycomponent';
+
+bootstrap(MyComponent);
+
+<!-- mycomponent.es6.js --> 
+import {
+  ComponentAnnotation as Component,
+  ViewAnnotation as View, bootstrap
+} from 'angular2/angular2';
+
+@Component({
+  selector: 'my-component'
+})
+@View({
+  template: `
+  <p (click)="user.focus()">
+    Grab focus
+  </p>
+  <input type="text" #user (keyup)>
+  {{user.value}}
+  `
+})
+export class MyComponent {
+  
+}
+<!-- ********************************************************* -->
