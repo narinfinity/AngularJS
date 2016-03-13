@@ -52,7 +52,7 @@ angular.module("myApp")
             scope.message = "compile postlink ctrl";
             //scope.$digest();
             //scope.$evalAsync(next);
-            //$timeout(next);
+            //$timeout(next, 4, false);//dont run $apply(next) and wait for next $digest() cycle
             console.log('postLink');
           }          
         };        
